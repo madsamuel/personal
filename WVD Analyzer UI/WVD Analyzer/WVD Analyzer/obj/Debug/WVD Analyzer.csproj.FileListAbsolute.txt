@@ -1,0 +1,14 @@
+C:\code\C#\WVDBestPractisesPS\WVD Analyzer UI\WVD Analyzer\WVD Analyzer\bin\Debug\WVD Analyzer.exe.config
+C:\code\C#\WVDBestPractisesPS\WVD Analyzer UI\WVD Analyzer\WVD Analyzer\bin\Debug\WVD Analyzer.exe
+C:\code\C#\WVDBestPractisesPS\WVD Analyzer UI\WVD Analyzer\WVD Analyzer\bin\Debug\WVD Analyzer.pdb
+C:\code\C#\WVDBestPractisesPS\WVD Analyzer UI\WVD Analyzer\WVD Analyzer\obj\Debug\WVD Analyzer.csprojResolveAssemblyReference.cache
+C:\code\C#\WVDBestPractisesPS\WVD Analyzer UI\WVD Analyzer\WVD Analyzer\obj\Debug\MainWindow.g.cs
+C:\code\C#\WVDBestPractisesPS\WVD Analyzer UI\WVD Analyzer\WVD Analyzer\obj\Debug\App.g.cs
+C:\code\C#\WVDBestPractisesPS\WVD Analyzer UI\WVD Analyzer\WVD Analyzer\obj\Debug\WVD Analyzer_MarkupCompile.cache
+C:\code\C#\WVDBestPractisesPS\WVD Analyzer UI\WVD Analyzer\WVD Analyzer\obj\Debug\WVD Analyzer_MarkupCompile.lref
+C:\code\C#\WVDBestPractisesPS\WVD Analyzer UI\WVD Analyzer\WVD Analyzer\obj\Debug\MainWindow.baml
+C:\code\C#\WVDBestPractisesPS\WVD Analyzer UI\WVD Analyzer\WVD Analyzer\obj\Debug\WVD Analyzer.g.resources
+C:\code\C#\WVDBestPractisesPS\WVD Analyzer UI\WVD Analyzer\WVD Analyzer\obj\Debug\WVD_Analyzer.Properties.Resources.resources
+C:\code\C#\WVDBestPractisesPS\WVD Analyzer UI\WVD Analyzer\WVD Analyzer\obj\Debug\WVD Analyzer.csproj.GenerateResource.Cache
+C:\code\C#\WVDBestPractisesPS\WVD Analyzer UI\WVD Analyzer\WVD Analyzer\obj\Debug\WVD Analyzer.exe
+C:\code\C#\WVDBestPractisesPS\WVD Analyzer UI\WVD Analyzer\WVD Analyzer\obj\Debug\WVD Analyzer.pdb
