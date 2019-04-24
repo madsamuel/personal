@@ -12,6 +12,7 @@ Home.ahk
         This is the script hat runs the macros based on the code here
 
 Runnign on my machine
+        C:\Users\stefang
         Go to C:\Program Files\luamacros\
         Run Lua with SECOND_KEYBOARD_script_for_LUA_MACROS.lua
         Recognize keyboard
