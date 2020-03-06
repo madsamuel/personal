@@ -28,7 +28,8 @@ $wpf.buttonImportPSModules.add_Click({
 
 	})
 
-$wpf.buttonVerifyGlobalAdmin.add_Click({
+$wpf.buttonVerifyGlobalAdmin.add_Click(
+    {
 
         #### Admin
         # @param
@@ -36,49 +37,51 @@ $wpf.buttonVerifyGlobalAdmin.add_Click({
         # @param
         $password = $wpf.passwordBoxGlobalAdmin.Password
 
-        if ($admin -eq "" ) {
-            $wpf.labelConcentStatus.Content = "Invalid credentials"
+        if ($admin -eq "" ) 
+        {
+            $wpf.labelConcentStatus.Content = "No credentials provided"
         }
         else 
         {
             $passwd = ConvertTo-SecureString $password -AsPlainText -Force 
             $pscredential = New-Object System.Management.Automation.PSCredential($admin, $passwd)
 
-        Try {
-                
-                    #### Login to Azure
-                    If ((Login-AzureRmAccount -Credential $pscredential).Account -eq $admin) 
+            Try 
+            {            
+                #### Login to Azure
+                If ((Login-AzureRmAccount -Credential $pscredential).Context.Account.Id -eq $admin)  
+                {
+                    #### Login to Azue AD 
+                    If ((Connect-AzureAd -Credential $pscredential).Account -eq $admin) 
                     {
-                        #### Login to Azue AD 
-                        If ((Connect-AzureAd -Credential $pscredential).Account -eq $admin) 
+                        ######## Checking consent
+                        $wvdObjectID = "321d3fa7-cf15-4173-9579-8117a28a0844" # This is the WVD app
+                        $sp = (Get-AzureADServicePrincipal -ObjectId $wvdObjectID).ObjectId
+                        If ($sp -eq "321d3fa7-cf15-4173-9579-8117a28a0844") 
                         {
-                            ######## Checking consent
-                            $wvdObjectID = "321d3fa7-cf15-4173-9579-8117a28a0844" # This is the WVD app
-                            $sp = (Get-AzureADServicePrincipal -ObjectId $wvdObjectID).ObjectId
-                            If ($sp -eq "321d3fa7-cf15-4173-9579-8117a28a0844") 
-                            {
-                                # Write-Host ("Concent granted") -BackgroundColor Green -ForegroundColor Black
-                                $wpf.labelConcentStatus.Content = "Consent granted"
-                                # $wpf.labelConcentStatus.Background.Color = "#00ff00" 
-                            }
-                            Else {
-                                # Write-Host ("Concent NOT granted") -BackgroundColor Red -ForegroundColor Black
-                                $wpf.labelConcentStatus.Content = "Consent NOT granted"
-                                # $wpf.labelConcentStatus.Background.Color = "#FFFF0000" 
-                            }
-                        ######## Checking consent    
+                            # Write-Host ("Concent granted") -BackgroundColor Green -ForegroundColor Black
+                            $wpf.labelConcentStatus.Content = "Consent granted"
+                            # $wpf.labelConcentStatus.Background.Color = "#00ff00" 
                         }
-                        else 
-                        {
-                            $wpf.labelConcentStatus.Content = "Invalid credentials"    
-                        }                        
+                        Else {
+                            # Write-Host ("Concent NOT granted") -BackgroundColor Red -ForegroundColor Black
+                            $wpf.labelConcentStatus.Content = "Consent NOT granted"
+                            # $wpf.labelConcentStatus.Background.Color = "#FFFF0000" 
+                        }
+                    ######## Checking consent    
                     }
-                    Else 
+                    else 
                     {
-                        $wpf.labelConcentStatus.Content = "Invalid credentials"        
-                    }                                                    
+                        $wpf.labelConcentStatus.Content = "Invalid credentials"    
+                    }                        
+                }
+                Else 
+                {
+                    $wpf.labelConcentStatus.Content = "Invalid credentials"        
+                }                                                    
             }
-            Catch {
+            Catch 
+            {
                 $wpf.labelConcentStatus.Content = "Invalid credentials"
             }
         }
@@ -146,7 +149,7 @@ Catch
 # does not handle tenant groups
 $admin = "admin@gt090617.onmicrosoft.com"
 # @param
-$password = "ReverseParol44"
+$password = ""
 # @param
 $tenant = "MVPBootcamp"
 
@@ -175,7 +178,7 @@ Catch
 # does not handle tenant groups
 $admin = "admin@gt090617.onmicrosoft.com"
 # @param
-$password = "ReverseParol44"
+$password = ""
 # @param
 $tenant = "MVPBootcamp"
 

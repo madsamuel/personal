@@ -1,4 +1,6 @@
-﻿Try 
+﻿# run this on VM that is part of the domain and uses same netwokr configuration
+
+Try 
 {
     if ((Test-NetConnection -ComputerName "rdbroker.wvd.microsoft.com").RemoteAddress.IPAddressToString -eq '40.113.204.88'  )
     {

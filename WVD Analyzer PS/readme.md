@@ -1,0 +1,1 @@
+Few scripts to help with Windows Virtual Desktop Create session host pool ARM Template.

@@ -14,7 +14,7 @@
 # @param
 $admin = "admin@gt090617.onmicrosoft.com"
 # @param
-$password = "ReverseParol44"
+$password = ""
 
 $passwd = ConvertTo-SecureString $password -AsPlainText -Force
 $pscredential = New-Object System.Management.Automation.PSCredential($admin, $passwd)
@@ -90,7 +90,7 @@ Catch
 # does not handle tenant groups
 $admin = "admin@gt090617.onmicrosoft.com"
 # @param
-$password = "ReverseParol44"
+$password = ""
 # @param
 $tenant = "MVPBootcamp"
 
@@ -119,7 +119,7 @@ Catch
 # does not handle tenant groups
 $admin = "admin@gt090617.onmicrosoft.com"
 # @param
-$password = "ReverseParol44"
+$password = ""
 # @param
 $tenant = "MVPBootcamp"
 

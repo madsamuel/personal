@@ -1,0 +1,1 @@
+# check if use can do domain join
