@@ -1,4 +1,4 @@
-﻿https://www.koskila.net/how-to-get-the-user-count-for-azure-ad-enterprise-application/#solution
+# https://www.koskila.net/how-to-get-the-user-count-for-azure-ad-enterprise-application/#solution
 
 $app_name = "Windows Virtual Desktop"
 $sp = Get-AzureADServicePrincipal -Filter "displayName eq '$app_name'"
