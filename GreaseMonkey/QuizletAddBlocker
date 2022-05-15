@@ -1,0 +1,63 @@
+// ==UserScript==
+// @name         QuizletAddBlocker
+// @namespace    http://madsamuel.net/
+// @version      0.3
+// @description  Block popups on Quizlet.com!
+// @author       You
+// @match        https://quizlet.com/*
+// @icon         https://www.google.com/s2/favicons?sz=64&domain=quizlet.com
+// @grant        none
+// ==/UserScript==
+
+(function() {
+    'use strict';
+
+    // Your code here...
+    // alert('Clean up :\)');
+
+    var consoleTag = "CleanUp:";
+
+    console.log(consoleTag + "Start cleanup!");
+
+    // remove top level navigation
+    var adSidebar = document.getElementById('TopNavigationReactTarget');
+    if (adSidebar) {
+        adSidebar.parentNode.removeChild(adSidebar);
+        console.log(consoleTag.concat("TopNavigationReactTarget!"));
+    }
+
+    // remove right hand side bar
+    adSidebar = document.getElementById('SetPageSidebarAdz');
+    if (adSidebar) {
+        adSidebar.parentNode.removeChild(adSidebar);
+        console.log(consoleTag + "SetPageSidebarAdz!");
+    }
+
+    // remove upsell banner bottom right
+    adSidebar = document.getElementById('UniversalUpsellTarget');
+    if (adSidebar) {
+        adSidebar.parentNode.removeChild(adSidebar);
+        console.log(consoleTag + "UniversalUpsellTarget!");
+    }
+
+
+    // handle post load video popup
+    window.addEventListener(
+        'load',
+        function() {
+            console.log(consoleTag + 'new element found post load.');
+
+            var adClass = document.getElementsByClassName('SetPageTerms-embeddedDesktopAdWrapper')[0];
+
+            console.log(consoleTag + 'element found');
+            console.log(consoleTag + adClass);
+
+            adClass.remove();
+
+            console.log(consoleTag + "post load removal of banner completed!");
+        },
+        true);
+
+
+    console.log(consoleTag + "Done cleanup!");    
+})();
